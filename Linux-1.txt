@@ -1,0 +1,235 @@
+LINUX:
+-----
+free open-source
+
+Server: a machine/system comes with hardware( CPU, RAM, NETWORK, DISK) 
+
+Layers of a Linux system:
+-------------------------
+A linux system has 3 main layers
+
+1. User process layer or user space
+
+2. Linux kernel layer
+
+3. Hardware Layer 
+
+
+kernel and user space:
+
+user process runs in 2 modes
+
+1. kernel mode --> cpu memory --> entire system will shutdown
+
+2. user mode --> sub-set of memory --> only that application will be impacted 
+
+
+Main memory:
+-----------
+0's and 1's 
+
+
+CPU and memory 
+
+1 gated community apartment, 200 flats, 1 security gaurd
+
+200 flat numbers --> memory address  --> 408 --> 012345
+
+CPU --> 20 orders --> 1 security guy --> the processing will take time 
+
+1cpu --> too may comes --> processing will take time 
+
+8 cpu --> 8 security gaurds --> processing will happen quicker 
+
+kernel:
+-------
+
+is the owner of the memory. 
+it divides memory into chuncks 
+
+20 processes --> memory to run the application 
+
+chrome --> 500mb --> kernel allocate memory to this application
+           50mb --> 
+notepad++ --> 100mb --> allocate that memory 
+
+
+process management:
+------------------
+
+starting
+pausing
+resuming
+scheduling
+terminating
+
+
+1cpu --> 1 request
+
+20 processes  
+
+1 process  --> 1234 --> 1 sec micro seconds --> kernel maintains state of the process 
+
+2 process --> 2 sec
+
+
+
+20 process --> 0.5 sec 
+21 process --> 
+
+context switch --> 
+
+time slice 
+
+system calls:
+-------------
+fork() --> kernel creates a nearly identical copy of process
+exec() --> the kernel loads that program, replacing the current process 
+
+
+
+
+program vs process vs thread:
+----------------------------
+
+program is nothing but an executable file
+
+process --> a program can have multiple processes 
+
+thread  --> each process will have one or multiple threads 
+
+
+which will be executed by cpu -->  will execute thread 
+
+thread is the actual work that will executed by cpu --> thread is the smallest unit of execution 
+
+
+process --> request memory --> allocted memory shared by all the threads of the process 
+
+
+4 cpu
+
+2 processes running
+
+16 threads 
+
+processes dont own cpu, they use cpu
+processes own memory 
+
+
+software threads  --> are created by programmers who written the application 
+hardware threads  --> is the hardware capability 
+
+1 cpu --> 1 thread 
+
+
+8 cpu --> physical cores 
+
+16 core logical cpus 
+
+16 threads --> hardware threads 
+
+1 cpu --> 2 harware threads available -->each cpu can handle 2 threads simultaneously 
+
+16 threads SMT 
+
+16 threads at any particular 
+
+
+context-switching --> software threads 
+
+hardware threads --> cpu itself is allowing two threads to be active on same physical core 
+
+
+16 --> threads will be active --> 2 per physical core 
+
+16 times 
+
+16 threads scheduled 
+
+
+namespace:
+----------
+namespace is used for isolation
+
+
+cGroups: control groups 
+-----------------------
+
+controls the resources 
+
+
+Directory structure in Linux:
+-----------------------------
+/ --> root directory
+/bin --> /usr/bin --> where regular binaries are kept 
+/boot --> contains operating system booting files
+/dev --> device files 
+/etc  --> contians application, user , system related configs
+/home --> holds the personal directories of regular users
+/root --> is the home directory of root user 
+/lib --> /usr/lib --> holds the libraries of applications, as well as the system libraries 
+
+/run --> run time data
+
+
+
+
+
+
+Distributions in Linux:
+-----------------------
+Redhat --> Enterprise version Linux        >  yum 
+ubuntu --> available free and Enterprise   --> apt 
+centos
+Debian
+suse Linux 
+amazonLinux   --> yum/dnf                         
+
+
+
+
+
+Linux is case-sensitive 
+
+
+commands:
+---------
+it is an instruction given to a shell to perform specific action
+
+syntax 
+
+command [options] <args>
+
+
+ls -l test/
+ls -ltr 1.txt
+
+
+
+devops/linux/aws/docker/k8s 
+
+mkdir devops 
+cd devops
+mkdir linux
+cd linux
+mkdir aws 
+
+mkdir -p devops/linux/aws/docker/k8s
+
+
+Relative Path
+Absolute path  --> will start from the root directory 
+
+vim --> a text editor in linux 
+
+i -> to enter into insert mode
+esc --> to comeout of insert mode 
+
+:q! --> to quit without saving
+:wq! --> to save and quit 
+
+
+
+
+cp <src> <dest> 
