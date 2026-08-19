@@ -1,10 +1,10 @@
 1. What is the difference between mkdir and touch?
-   mkdir: create directory or folder 
+    mkdir: create directory or folder 
        command: mkdir <dir name>
-   touch: to create file  
+    touch: to create file  
        command: touch <file_name with extention>
 
-2. What is the difference between cp and mv?
+3. What is the difference between cp and mv?
    cp: copy 
     used to copy content from one file to another file 
     command: cp <file1> <file2>
@@ -16,19 +16,19 @@
              mv <old_file_name> <new_file_name>
 
 
-3. What happens when you use cat > file.txt and the file already exists?
+4. What happens when you use cat > file.txt and the file already exists?
    cat > file.txt : overwrites the file content.
 
 
-4. What happens when you use cat >> file.txt and the file already exists?
+5. What happens when you use cat >> file.txt and the file already exists?
    cat >> file.txt : it will append new content to the existing content.
 
 
-5. What does Ctrl+D do when using cat > file.txt?
+6. What does Ctrl+D do when using cat > file.txt?
    Ctrl+D: finished entering the input to file.txt
 
 
-6. What is the difference between cat and tac?
+7. What is the difference between cat and tac?
    cat: used to view/display file content
    cat > file_name: used to overwrite the existing file content.  
    cat >> file_name: used to append new content to the existing file content.
