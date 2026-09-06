@@ -1,0 +1,274 @@
+Assignment 1 — System Health Check:
+-----------------------------------
+Run the following commands and prepare a basic system health report:
+
+uptime
+free -h
+df -h
+top
+
+Answer the following:
+
+How long has the system been running?
+How many users are currently logged in?
+What are the 1-minute, 5-minute and 15-minute load averages?
+How much total RAM is available?
+How much RAM is currently used?
+How much swap is available?
+Which filesystem has the highest disk utilization?
+Is any filesystem above 80% utilization?
+
+
+Assignment 2 — Monitor RAM in Real Time
+---------------------------------------
+
+Use free and watch to monitor memory.
+
+free -h
+watch free -h
+watch -n 5 free -h
+
+Tasks:
+
+Monitor RAM for 2 minutes.
+Record RAM utilization every 30 seconds.
+Record total, used, free, buff/cache, and available.
+
+
+Question: Why can free memory be very low while available memory is still high?
+
+
+Assignment 3 — CPU Monitoring Using top
+--------------------------------------
+Run:
+
+top
+
+Then:
+
+top -d 5
+top -n 3
+top -b -n 3
+top -c
+
+Answer the following:
+
+What is the total CPU utilization?
+Which process is consuming the most CPU?
+Which process is consuming the most memory?
+What is the meaning of %us, %sy, %id, %wa?
+What is the difference between top -n 3 and top -d 5?
+Why would top -b be useful in scripts?
+
+Assignment 4 — Find Resource-Hungry Processes:
+---------------------------------------------
+Find the processes consuming the most CPU and memory.
+
+Use:
+
+ps -ef
+ps -aux
+
+Then:
+
+ps -aux --sort=-%cpu
+ps -aux --sort=-%mem
+
+Tasks:
+
+Find the top 5 CPU-consuming processes.
+Find the top 5 memory-consuming processes.
+Identify the PID of the highest CPU-consuming process.
+Find details about that PID using:
+ps -p <PID>
+
+
+Assignment 5 — Process Investigation:
+-------------------------------------
+Choose any running process.
+
+Run:
+
+ps -p <PID>
+ps -ef | grep <process>
+ps -T -p <PID>
+
+Answer:
+
+What is the PID?
+Who owns the process?
+When was the process started?
+What command started the process?
+How many threads does it have?
+What are the thread IDs?
+What is the difference between a process and a thread?
+
+
+Assignment 6 — User Process Investigation:
+------------------------------------------
+Create/use your Linux user and run:
+
+ps -f -u <username>
+
+Tasks:
+
+List all processes belonging to your user.
+Identify which shell you're using.
+Identify the PID of your shell.
+
+Start in another terminal:
+
+sleep 500
+
+Find the sleep process.
+Kill the process.
+
+Verify:
+
+ps -ef | grep sleep
+
+
+Assignment 7 — Measure Command Execution Time:
+----------------------------------------------
+Compare:
+
+time sleep 2
+
+and:
+
+time sleep 5
+
+Then:
+
+time ls
+time find /var -type f
+
+Answer:
+
+What is real time?
+What is user time?
+What is sys time?
+
+
+Assignment-8
+------------
+
+Scenario:
+
+You are a Linux administrator responsible for a production server. The application team reports that the server is slow.They suspect CPU, memory, disk, or a problematic process.You need to investigate the server and prepare a System Health Report.
+
+Requirements
+
+Collect information using:
+
+uptime
+free -h
+df -h
+df -h .
+top
+ps -ef
+ps -aux
+ps -aux --sort=-%cpu
+ps -aux --sort=-%mem
+
+Investigate:
+
+1. System
+
+Uptime
+Load average
+Logged-in users
+
+2. Memory
+
+Total RAM
+Used RAM
+Available RAM
+Swap usage
+
+3. CPU
+
+CPU utilization
+Top 5 CPU-consuming processes
+
+4. Disk
+
+Filesystem utilization
+Top directories consuming space
+
+5. Processes
+
+Top 5 CPU processes
+Top 5 memory processes
+PID of suspicious process
+Number of threads
+
+6. Packages
+
+Install nginx:
+
+apt update
+apt install nginx -y
+
+Verify:
+
+nginx -v
+
+Then remove it:
+
+apt remove nginx
+
+Finally purge it:
+
+apt purge nginx
+
+
+should submit a file called:  system-health-report.txt
+
+with this structure:
+
+=================================
+       SYSTEM HEALTH REPORT
+=================================
+
+Hostname:
+Date:
+
+-------- SYSTEM --------
+Uptime:
+Load Average:
+Logged-in Users:
+
+-------- MEMORY --------
+Total RAM:
+Used RAM:
+Free RAM:
+Available RAM:
+Swap:
+
+-------- CPU --------
+CPU Utilization:
+Top CPU Process:
+
+-------- DISK --------
+Filesystem:
+Disk Utilization:
+Largest Directory:
+
+-------- PROCESSES --------
+Top CPU Process:
+Top Memory Process:
+PID:
+Threads:
+
+-------- PACKAGE --------
+Package Manager:
+Nginx Version:
+
+-------- CONCLUSION --------
+Is the server healthy?
+
+If not:
+What is the problem?
+
+Recommended Action:

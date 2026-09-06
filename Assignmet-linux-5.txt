@@ -1,0 +1,79 @@
+Assignment-1 — Basic User Management
+-----------------------------------
+Create a user named devuser1.
+Create three users:
+developer1
+developer2
+developer3
+Verify that all three users were created.
+Delete developer3.
+Create a user named tester1.
+Change the username tester1 to qauser1.
+Delete qauser1.
+Create a user named admin1 and verify its UID and primary group.
+
+
+Assignment-2 — Group Management:
+-------------------------------
+Create the following groups:
+developers
+testers
+admins
+Verify that the groups were created.
+Rename the group testers to qa.
+Delete the admins group.
+Create a new group called operations.
+
+Assignment-3 — Add Users to Groups:
+----------------------------------
+Create these users:
+john
+alice
+bob
+Add john and alice to the developers group.
+Add bob to the qa group.
+Add bob to the developers group without removing his existing group memberships.
+Verify the group memberships of all three users.
+Remove alice from the developers group.
+Verify that alice is no longer a member of developers.
+
+
+Assignment-4 — File Ownership:
+-----------------------------
+Create a directory:
+/project
+
+Create three files inside it:
+/project/app.conf
+/project/app.log
+/project/deploy.sh
+
+Change the owner of app.conf to john.
+Change the owner and group of app.log to:
+alice:developers
+
+Change the group ownership of deploy.sh to developers.
+Verify the ownership and group of all three files.
+
+
+Assignment-5 — File Permissions:
+-------------------------------
+Set the permissions of app.conf to:
+rw-r-----
+Set the permissions of app.log to:
+rw-r--r--
+Set the permissions of deploy.sh to:
+rwxr-x---
+Verify the permissions using ls -l.
+
+Convert the following symbolic permissions into numeric permissions:
+rwxr-x---
+rw-r-----
+rwxrwxr-x
+r--r--r--
+
+Convert the following numeric permissions into symbolic permissions:
+755
+644
+750
+700

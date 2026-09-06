@@ -1,0 +1,107 @@
+system monitoring commands:
+--------------------------
+RAM --
+
+CPU 
+
+Disk 
+
+
+uptime --> to check how many users are logged in at that particular time, cpu avg 1min, 5min, 15 min, uptime 
+
+free --> used to check memory utilization 
+
+total --> RAM size
+used --> current utilization 
+free --> idle memory 
+shared --> tempfs utilization
+buff/cache --> kernel buffers/cache
+available --> free + reclaimable from buff/cache 
+
+free -h --> to see output in human redable format
+
+swap memory is a partition in your hard-disk which will be used as virtual memory 
+
+watch --> to watch the output of a command every 2 seconds by default
+
+watch -n 5 free -h --> to watch output every 5 seconds interval 
+
+
+top --> to see real time utilization of cpu and also memory 
+
+
+top -d <seconds> --> interval between output 
+
+top -n <times> --> no of times you want to see the output of top command 
+
+top -b -n 2 --> prints in batches, two times 
+
+top -c --> to see the full commands 
+
+
+time  <command> --> to know how much time a command is taking to execute a command 
+
+df -h  --> to see the disk utilization
+
+df -h . --> to see the folder belongs to which disk 
+
+
+
+du -sh --> to see which folder/file is actually taking up the space 
+
+du -h --max-depth=1 /var --> one sub-folder inside var it will give the utilization
+
+
+process:
+--------
+
+ps -e --> all the process running in the system 
+
+ps -ef --> gives you more details like stime 
+
+ps -ef | grep containerd 
+
+ps -f -u chenna --> only chenna user related process will be shown
+
+ps -p <process-id> will give you details about that process 
+
+ps -aux --> give you even more details 
+
+ps -T -p <process-id> --> to see the thread id and number of threads of the process 
+
+
+
+package and package manager:
+----------------------------
+
+.rpm, .deb, zip, .tar, .tar.gz 
+
+
+.deb --> Debian, ubuntu, linux mint 
+.rpm --> RHEL, centos, fedora, amazon linux 
+
+dpkg -i filename.deb 
+
+
+apt update -y 
+
+apt install nginx -y 
+
+apt, apt-get  --> ubuntu, debian
+
+yum,dnf -->RHEL, centos, amazon linux 
+
+apk --> alpine linux  
+
+
+apt update --> will update the version in the system 
+
+
+apt install nginx 
+
+apt upgrade nginx --> the latest version will be installed 
+
+apt remove nginx --> will remove the package
+
+apt purge nginx --> it will remove the files and folder 
+

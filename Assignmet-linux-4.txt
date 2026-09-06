@@ -1,0 +1,72 @@
+Task-1 - Production Backup Simulation:
+--------------------------------------
+
+Create:
+
+production/
+├── application/
+├── config/
+├── logs/
+├── scripts/
+└── data/
+
+1. Create at least 3 files in each directory.
+2. Create a compressed backup of the entire application. (using tar and zip)
+3. Display the archive contents without extracting.
+4. Extract it into /tmp/production_restore.
+5. Verify that the complete directory structure and files are restored.
+
+Task-2 - Configuration backup:
+------------------------------
+Create:
+
+config/
+├── app.conf
+├── database.conf
+├── nginx.conf
+└── redis.conf
+1. Create config_backup.tar.gz.
+2. Delete the original config/ directory.
+3. Restore it from the archive.
+
+
+Task-3 - Add files to an existing tar archive:
+----------------------------------------------
+
+1. Create backup.tar containing file1.txt and file2.txt.
+2. Create file3.txt.
+3. Add file3.txt to the existing archive.
+4. Verify the contents.
+
+
+Task-4 - Selective Archiving:
+-----------------------------
+Archive only specific directories
+
+Create application/ containing:
+logs/
+config/
+data/
+scripts/
+
+
+1. Create an archive containing only logs/ and config/.
+
+
+Assignment-5 - Archive specific files:
+-------------------------------------
+
+Create 5 files:
+
+app.log
+error.log
+access.log
+config.txt
+README.txt
+
+
+1. Create an archive backup.tar.gz containing only the three .log files.
+2. List archive contents without extracting
+3. Extract only error.log from the archive.
+4. Now add config.txt file to an existing tar archive
+5. Verify the contents.

@@ -1,0 +1,121 @@
+
+How package managers like apt/yum fetch software from repository?
+
+it checks the repository list  /etc/apt/sources.list.d  --> for apt package manager 
+
+/etc/yum.repos.d  --> yum package manager
+
+  
+echo "deb [signed-by=/etc/apt/keyrings/jenkins-keyring.asc]" \
+  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+
+
+
+apt update --> when u r installing new application/software in ur system 
+
+
+systemctl or service --> used to manage system services/daemons
+
+daemon  --> background running process 
+
+
+sytemctl start nginx 
+
+systemctl stop nginx 
+
+systemctl restart nginx 
+
+systemctl status nginx
+
+systemctl enable nginx
+
+systemctl disable nginx 
+
+systemctl list-units --type=service
+
+
+zip is a command used to archive files and directories into .zip 
+
+zip -r test.zip directory/
+
+zip test.zip <arg1> <arg2> <arg3>
+
+
+unzip -l <zipfile>  --> to see the contents
+
+unzip <zipfile> --> unzips in the current working directory 
+
+unzip <zipfile> -d /opt --> extracts in that directory 
+
+
+tar:
+---
+
+tar --> archive, compress, restores the file permissions
+
+tar -cvf test.tar journal/ 
+
+tar -xvf test.tar 
+
+tar -xvf test.tar -C /opt 
+
+tar -cvzf test.tar.gz journal/ 
+
+tar -xvzf test.tar.gz 
+
+tar -tvf test.tar --> to see the contents
+
+
+user management:
+----------------
+authenticate and authorize 
+
+username password --> authentication -> user creds is correct 
+
+authorization  --> whether the user has the permission to see/edit/delete 
+
+Linux is a multi-user O.S. 
+each user and group is assigned with unique identifiers and permissions to access files and system resources
+
+UID --> userID
+
+root --> 0
+
+system users --> 1-999
+
+regular users --> 1000
+
+types of users:
+----------------
+
+1. Root user --> he has all the permission --> 0
+2. System users --> application users, nginx. jenkins --> 1 to 999
+3. Regular users --> created by admin user, root --> 1000
+
+
+groups:
+------
+group is a collection of users. Groups are used to assign permissions collectively to multiple users
+
+1. when a user is created --> chenna --> a default group with name chenna is created
+ 
+2. secondary groups --> you have to add users to the groups--> docker 
+
+
+/etc/passwd --> stores user account info
+
+/etc/shadow --> hashed password of all the users 
+
+/etc/group --> store group info 
+
+/etc/gshadow --> passwords of groups 
+
+
+
+useradd -m --> to create a home directory 
+        -s --> default shell of a user /bin/bash /bin/sh  /bin/dash /bin/csh 
+		-u --> set customID
+		-d --> custom home directory  
+		
+passwd --> to set/change a password

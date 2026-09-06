@@ -1,0 +1,227 @@
+user management:
+----------------
+authenticate and authorize 
+
+username password --> authentication -> user creds is correct 
+
+authorization  --> whether the user has the permission to see/edit/delete 
+
+Linux is a multi-user O.S. 
+each user and group is assigned with unique identifiers and permissions to access files and system resources
+
+UID --> userID
+
+root --> 0
+
+system users --> 1-999
+
+regular users --> 1000
+
+types of users:
+----------------
+
+1. Root user --> he has all the permission --> 0
+2. System users --> application users, nginx. jenkins --> 1 to 999
+3. Regular users --> created by admin user, root --> 1000
+
+
+groups:
+------
+group is a collection of users. Groups are used to assign permissions collectively to multiple users
+
+1. when a user is created --> chenna --> a default group with name chenna is created
+ 
+2. secondary groups --> you have to add users to the groups--> docker 
+
+
+/etc/passwd --> stores user account info
+
+/etc/shadow --> hashed password of all the users 
+
+/etc/group --> store group info 
+
+/etc/gshadow --> passwords of groups 
+
+
+
+useradd -m --> to create a home directory 
+        -s --> default shell of a user /bin/bash /bin/sh  /bin/dash /bin/csh 
+		-u --> set customID
+		-d --> custom home directory  
+		
+passwd --> to set/change a password
+
+
+groups 
+------
+GID 
+
+a user can be in:
+
+1. primary Group 
+2. n number of secondary group 
+
+groupadd <nameof the group >
+
+usermod:
+--------
+usermod [options] <username>
+
+usermod -l --> rename an existing user 
+        -d --> to change the home directory of the user
+		-s --> to change the shell 
+		-G --> add to the secondary group 
+		-L --> lock a user account 
+		-U --> unlock a user account 
+		-g --> change the primary group 
+		
+userdel <username> --> delete an existing user 
+
+userdel -r <username> 
+
+groupdel <groupdel>
+
+groupmod --> to change group related attributes
+
+
+root --> extensive permissions
+
+regular user --> only limited permissions 
+
+
+
+test123 --> 
+
+
+systemctl start nginx --> by root user 
+
+
+sudo --> additional permissions to the regular user 
+
+usermod -aG sudo test123 
+
+/etc/sudoers --> where you 
+
+
+visudo --> it will check the syntax before saving the file 
+
+root    ALL=(ALL:ALL) ALL
+
+username 
+
+ALL --> any host 
+(ALL:ALL) --> run as any user and any group 
+
+ALL --> can run all commands 
+
+
+
+test123 ALL=(ALL:ALL) 
+
+
+test123 ALL=(root) /usr/bin/systemctl
+
+
+
+File or Folder Permissions:
+---------------------------
+3 types of user 
+
+user(u)  --> owner 
+group(g) --> group 
+other(o) --> others 
+
+
+3 permission to a file/folder
+
+Read(r=4)
+Write(w=2)
+execute(x=1)
+
+
+
+
+umask:
+------
+
+default permissions of a file is 0666
+
+default permission of a directory is 0777
+
+0666
+0002
+----
+0664
+rw-rw-r--
+
+0666
+0066
+----
+0600
+rw-r--r--
+
+0777
+0002
+----
+0775
+rwxrwxr-x
+
+0777
+0022
+-----
+0755
+rwxr-xr-x 
+
+file:
+-----
+r --> to read/ see the contents of a file 
+w --> modify a file 
+x --> run as a binary or to execute a command 
+
+
+directory:
+----------
+r --> to list the contents of a directory 
+w --> create, delete, or rename file in a directory 
+x --> enter the directory and access the files inside 
+
+.bashrc
+.profile 
+
+vim /etc/profile
+
+
+chmod --> used to change the permissions of a file or directory
+
+chmod [options] mode filename
+
+
+script 
+rwxr-xr--
+754
+
+
+user --> owner
+group -->
+other --> 
+
+
+chown --> change owner/group of the file  
+chown [options] USER[:group] file/folder 
+
+
+softlink is like a shortcut in linux. you can create a soft link to any file and directory 
+
+ln -s <src> <dest>
+
+ln 
+
+
+hardlink 
+
+
+ls 
+
+which ls 
+
+/usr/bin/ls 
